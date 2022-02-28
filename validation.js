@@ -1,4 +1,5 @@
 const Joi = require('joi');
+const jwt = require('jsonwebtoken');
 
 
 // validating registration
@@ -23,6 +24,8 @@ const registerValidation = (data) => {
  }
 
 // login to verify our token (JWT)
-
+const verifyToken = (req, res, next) => {
+    const token = req.header("auth-token");
+}
 
 module.exports = { registerValidation, loginValidation };
