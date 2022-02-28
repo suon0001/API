@@ -12,4 +12,4 @@ let signSchema = new Schema (
     }
 );
 
-module.expert = mongoose.model("sign", signSchema);
+module.exports = mongoose.model("Signs", signSchema);

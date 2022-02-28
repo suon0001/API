@@ -30,7 +30,7 @@ app.get("/api/welcome", (req, res) => {
 
 //CRUD
 
-app.use("/api/signs", signRoutes);
+app.use("/api/sign", signRoutes);
 
 
 const PORT = process.env.PORT || 4000;
