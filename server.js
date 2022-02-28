@@ -6,6 +6,8 @@ const app = express();
 //import routes
 const signRoutes = require("./routes/sign");
 
+const authRoutes = require("./routes/auth");
+
 require("dotenv-flow").config();
 
 // parse request of content-type JSON
@@ -31,6 +33,7 @@ app.get("/api/welcome", (req, res) => {
 //CRUD
 
 app.use("/api/sign", signRoutes);
+app.use("/api/user", authRoutes);
 
 
 const PORT = process.env.PORT || 4000;
@@ -40,4 +43,4 @@ app.listen(PORT, function() {
     console.log("Server is running on port: " + PORT);
 })
 
-module.expert = app;
+module.exports = app;
