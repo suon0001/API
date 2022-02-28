@@ -1,12 +1,13 @@
 const router = require("express").Router();
 const Signs = require("../models/sign");
+const { verifyToken } = require("../validation");
 
 //CRUD operations
 
 // /api/signs/
 //POST
 
-router.post("/", (req, res) => {
+router.post("/", verifyToken, (req, res) => {
   data = req.body;
   console.log(data);
   Signs.insertMany(data)
