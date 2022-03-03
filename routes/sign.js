@@ -1,6 +1,6 @@
 const router = require("express").Router();
 const Signs = require("../models/sign");
-const { verifyToken } = require("../validation");
+const { verifyToken } = require("../validation"); 
 
 //CRUD operations
 
@@ -56,7 +56,7 @@ router.get("/:id", (req, res) => {
 //PUT
 
 //Update a specific sign
-router.put("/:id", (req, res) => {
+router.put("/:id", verifyToken, (req, res) => {
   const id = req.params.id;
 
   Signs.findByIdAndUpdate(id, req.body)
@@ -66,11 +66,11 @@ router.put("/:id", (req, res) => {
           message:
             "Cannot update zodiac sign with id=" +
             id +
-            ". Maybe Sign was not found!",
+            ". Maybe zodiac sign was not found!",
         });
       } else {
         res.send({
-          message: "Status of the Zodiac sign was succesfully updated",
+          message: "Status of the zodiac sign was succesfully updated",
         });
       }
     })
@@ -92,11 +92,11 @@ router.delete("/:id", (req, res) => {
           message:
             "Cannot delete zodiac sign with id=" +
             id +
-            ". Maybe Sign was not found!",
+            ". Maybe zodiac sign was not found!",
         });
       } else {
         res.send({
-          message: "Status of the Zodiac sign was succesfully deleted",
+          message: "Status of the zodiac sign was succesfully deleted",
         });
       }
     })
