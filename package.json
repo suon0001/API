@@ -1,5 +1,5 @@
 {
-  "name": "men_restful_api",
+  "name": "zodiac_restful_api",
   "version": "1.0.0",
   "description": "MongoDb-ExpressJS-NodeJs RESTful API",
   "main": "server.js",
@@ -24,6 +24,8 @@
     "joi": "^17.6.0",
     "jsonwebtoken": "^8.5.1",
     "mongodb": "^4.4.0",
-    "mongoose": "^6.2.2"
+    "mongoose": "^6.2.2",
+    "swagger-ui-express": "^4.3.0",
+    "yamljs": "^0.3.0"
   }
 }
