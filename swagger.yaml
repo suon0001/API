@@ -19,8 +19,6 @@ components:
     Sign:
       type: object
       properties:
-        id:
-          type: string
         zodiac:
           type: string
         number:
@@ -114,11 +112,13 @@ paths:
               schema:
                 type: array
                 items:
-                  $ref: "#/components/schemas/Signs"
+                  $ref: "#/components/schemas/Sign"
+              
+                  
     
     post:
-      summary: Create a new Sign
-      description: Create a new Sign
+      summary: Create a new zodiac sign
+      description: Create a new zodiac sign
       security:
         - ApiKeyAuth: []      
       requestBody:
@@ -126,7 +126,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: "#/components/schemas/Signs"
+              $ref: "#/components/schemas/Sign"
 
       responses:
         201:
@@ -134,7 +134,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: "#/components/schemas/Signs"
+                $ref: "#/components/schemas/Sign"
   
   /sign/{id}:
     get:
@@ -155,7 +155,7 @@ paths:
               schema:
                 type: array
                 items:
-                  $ref: "#/components/schemas/Signs"
+                  $ref: "#/components/schemas/Sign"
    
     put:
       summary: Updates a specific zodiac sign
@@ -174,7 +174,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: "#/components/schemas/Signs"
+              $ref: "#/components/schemas/Sign"
 
       responses:
         201:
