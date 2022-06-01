@@ -7,7 +7,7 @@ const { verifyToken } = require("../validation");
 // /api/signs/
 //POST
 
-router.post("/", verifyToken, (req, res) => {
+router.post("/", (req, res) => {
   data = req.body;
   console.log(data);
   Signs.insertMany(data)
