@@ -45,7 +45,7 @@ describe('/First Test Collection', () => {
 
         let sign = {
             zodiac: "test",
-            number: 12,
+            number: 1,
             traits: "test",
             element: "test",
             month: "test",
